@@ -1,0 +1,32 @@
+{
+  "name": "expoFitter",
+  "version": "1.0.0",
+  "description": "A Shiny and Electron-powered Windows application for analyzing neuroelectrophysiological IKCa current data using single- and double-exponential model fits. This tool can help researchers study the time dynamics of slow currents, providing interactive model parameter adjustment, R-squared, and residual standard error diagnostics.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "package-win": "electron-packager . --overwrite --platform=win32 --arch=ia32 --out=expoFitter_win32 --version-string.CompanyName=\"Hooper Laboratory\" --version-string.ProductName=\"expoFitter\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ryEllison/expoFitter"
+  },
+  "keywords": [
+    "windows",
+    "shiny",
+    "electron",
+    "neuroelectrophysiology",
+    "IKCa current",
+    "exponential fitting",
+    "single-exponential",
+    "double-exponential",
+    "time dynamics",
+    "R-squared",
+    "residual standard error"
+  ],
+  "author": "Ryan Ellison, PhD",
+  "license": "",
+  "devDependencies": {
+    "electron": "^32.1.2"
+  }
+}

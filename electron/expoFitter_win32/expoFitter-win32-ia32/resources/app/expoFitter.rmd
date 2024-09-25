@@ -1,0 +1,514 @@
+---
+title: 'expoFitter'
+author: 'Ryan Ellison, PhD'
+output: 
+  flexdashboard::flex_dashboard:
+runtime: shiny
+---
+
+```{r, include = FALSE}
+
+# Load backend logic and dependencies
+source('backend_logic.R')
+library(dplyr)
+library(minpack.lm)
+library(DT)
+library(shiny)
+
+# Global data handler
+reactiveData <- reactive({
+  if (FALSE){
+    'Read data from user-uploaded .csv file'
+  }
+  
+  # Access uploaded file from input
+  uploadedFile <- input$data
+  
+  # Check for presence of data file
+  if (is.null(uploadedFile)){
+    # Return NULL if no file is uploaded
+    return(NULL)
+  
+  } else {
+    # Validate file format before read process
+    if (!grepl('\\.csv$', uploadedFile$name)){
+      # Error notification
+      showNotification('Please upload .csv file.', 
+                       type = 'error')
+      
+      # NULL X/O
+      return(NULL)
+    
+    } else {
+      # Ingest dataset
+      data <- read.csv(uploadedFile$datapath)
+    
+    # Check if data is empty or malformed
+    if (nrow(data) == 0 || ncol(data) < 2){
+      showNotification('Uploaded .csv is empty or malformed. Please check file.', 
+                       type = 'error')
+      # NULL X/O
+      return(NULL)
+    }
+    
+    # Data X/O
+    return(data)
+    }
+  }
+})
+
+```
+
+Inputs {.sidebar data-width=325}
+------------------------------------------------------
+  
+### __Data__
+  
+```{r}
+
+## UI Logic
+# File input widget for uploading .csv data
+fileInput(inputId = 'data',
+          label = 'Select File')
+
+## Server Logic
+# No server logic in this section
+
+## Observer Logic
+# No observer logic in this section
+
+```
+
+### __Visualization__
+
+```{r}
+
+## UI Logic
+# Computational reasoning for rendering numeric input widget 
+output$ylim <- renderUI({
+  if (FALSE){
+    'Create input widget that uses default and data-driven values'
+  }
+  
+  # Check if data-driven value is provided
+  if (is.null(reactiveData())){
+    # Create slider with default value if no data provided
+    numericInput(inputId = 'ylim', 
+                 label = 'Y-Axis Upper Limit',
+                 value = 150)
+  
+  } else {
+    # Create slider with value based on provided data
+    numericInput(inputId = 'ylim', 
+                 label = 'Y-Axis Upper Limit',
+                 value = round(max(reactiveData()[[2]]) + 10, 
+                               digits = -1))
+  }
+})
+
+# Render UI outputs (UI Logic)
+uiOutput('ylim')
+
+## Server Logic
+# No server logic in this section
+
+## Observer Logic
+# No observer logic in this section
+
+```
+
+### __Model Equations__
+
+```{r}
+
+## UI Logic
+# Static display of model equations
+# No code needed here as equations are displayed in LaTeX
+
+## Server Logic
+# No server logic in this section
+
+## Observer Logic
+# No observer logic in this section
+
+```
+
+$$I = Ae^{-\frac{t}{B}} + C$$
+
+$$I = Ae^{-\frac{t}{B}} + Ce^{-\frac{t}{D}} + E$$
+
+$$B = \tau_{fast}$$
+
+$$D = \tau_{slow}$$
+
+### __Model Initialization__
+
+```{r}
+
+## UI Logic
+# Create toggle button with model options
+selectInput(inputId = 'modelType',
+            label = 'Select Model',
+            choices = c('Single-Exponential', 
+                        'Double-Exponential', 
+                        'Both'),
+            selected = 'Single-Exponential')
+
+# UI logic for rendering sliders
+output$sliderA <- renderUI({
+  if (FALSE) {
+    'Create slider for parameter A with default and data-driven values'
+  }
+  
+  # Create slider for parameter A, defaulting to 150 or max amplitude of data
+  createSlider(inputId = 'sliderA', 
+               label = 'A Parameter', 
+               minVal = 0, 
+               maxVal = 300, 
+               stepVal = 1, 
+               defaultVal = 150, 
+               dataVal = if (!is.null(reactiveData())){
+                   max(reactiveData()[[2]])
+                 
+                 } else {
+                   NULL
+                 })
+})
+
+output$sliderB <- renderUI({
+  if (FALSE){
+    'Create slider for parameter B with default and data-driven values'
+  }
+  
+  # Create slider for parameter B, defaulting to 2.5 or 0.5
+  createSlider(inputId = 'sliderB', 
+               label = 'B Parameter', 
+               minVal = 0, 
+               maxVal = 5, 
+               stepVal = 0.25, 
+               defaultVal = 2.5, 
+               dataVal = if (!is.null(reactiveData())) 0.5 else NULL)
+})
+
+output$sliderC <- renderUI({
+  if (FALSE){
+    'Create slider for parameter C with default and data-driven values'
+  }
+  
+  # Create slider for parameter C, defaulting to 75 or max amplitude divided by 1.5
+  createSlider(inputId = 'sliderC', 
+               label = 'C Parameter', 
+               minVal = 0, 
+               maxVal = 150, 
+               stepVal = 1, 
+               defaultVal = 75, 
+               dataVal = if (!is.null(reactiveData())){
+                  max(reactiveData()[[2]]) / 1.5
+                
+                } else {
+                  NULL
+                })
+})
+
+output$sliderD <- renderUI({
+  if (FALSE){
+    'Create slider for parameter D with default and data-driven values'
+  }
+  
+  # Create slider for parameter D, defaulting to 7.5 or 3.5
+  createSlider(inputId = 'sliderD', 
+               label = 'D Parameter', 
+               minVal = 0, 
+               maxVal = 15, 
+               stepVal = 0.25, 
+               defaultVal = 7.5, 
+               dataVal = if (!is.null(reactiveData())) 3.5 else NULL)
+})
+
+output$sliderE <- renderUI({
+  if (FALSE){
+    'Create slider for parameter E with default and data-driven values'
+  }
+  
+  # Create slider for parameter E, defaulting to 50 or tail of dynamic process
+  createSlider(inputId = 'sliderE', 
+               label = 'E Parameter', 
+               minVal = 0, 
+               maxVal = 100, 
+               stepVal = 0.5, 
+               defaultVal = 50, 
+               dataVal = if (!is.null(reactiveData())){
+                  reactiveData()[[2]][length(reactiveData()[[2]]) - (1/0.001)]
+                
+                } else {
+                  NULL
+                })
+})
+
+## Server Logic
+# No server logic in this section
+
+## Observer Logic
+# Dynamic rendering based on model selection
+observeEvent(input$modelType, {
+  if (input$modelType == 'Single-Exponential'){
+    # Render sliders for single-exponential model
+    output$sliderContainer <- renderUI({
+      tagList(
+        uiOutput('sliderA'),
+        uiOutput('sliderB'),
+        uiOutput('sliderC')
+      )
+    })
+  
+  } else {
+    # Render sliders for double-exponential model or both models
+    output$sliderContainer <- renderUI({
+      tagList(
+        uiOutput('sliderA'),
+        uiOutput('sliderB'),
+        uiOutput('sliderC'),
+        uiOutput('sliderD'),
+        uiOutput('sliderE')
+      )
+    })
+  }
+})
+
+# Render UI outputs (UI Logic)
+uiOutput('sliderContainer')
+
+# Create action button for event triggering (UI Logic)
+div(style = 'display: inline-block; width: 98%; text-align: center', 
+    actionButton(inputId = 'fitModel',
+                 label = 'Fit Model'))
+
+```
+
+<!-- ### __Save__ -->
+
+```{r}
+
+## UI Logic inside conditionalPanel
+conditionalPanel(
+  # Reveal section when data is uploaded
+  condition = 'output.showSaveButton == true',
+  
+  # Section heading 'Save'
+  h3(HTML('<b>Save</b>')),
+  
+  # Download button widget for saving generated plot
+  div(style = 'display: inline-block; width: 98%; text-align: center',
+      downloadButton(outputId = 'savePlot',
+                     label = '',
+                     style = 'width: 40%')),
+
+  # Add empty space
+  br(),
+  br()
+)
+
+## Server Logic
+# Download handler for saving plot as .pdf
+output$savePlot <- downloadHandler(
+  file = function(){
+    paste(floor(runif(1, min = 0, max = 10^10)), '.pdf', sep = '')
+  },
+  
+  content = function(file){
+    
+    # Open PDF device
+    pdf(file)
+    
+    # Generate and save current visualization
+    isolate({
+      tryCatch({
+        if (input$fitModel == 0){
+          # If model not fit, save 'base' plot
+          plotFigure(reactiveData(), input$ylim)
+        
+        } else {
+          # If model fit, save plot with model curves
+          plotFigure(reactiveData(), input$ylim)
+          wrangleFitVisualize(reactiveData(),
+                              input$sliderA, 
+                              input$sliderB, 
+                              input$sliderC, 
+                              input$sliderD, 
+                              input$sliderE, 
+                              input$modelType)
+        }
+      }, error = function(e){})
+    })
+    
+    # Close .pdf device
+    dev.off()
+  }
+)
+
+## Observer Logic
+# Observer controls visibility of save section based on data availability
+output$showSaveButton <- reactive({
+  # Return TRUE if data is present, FALSE otherwise
+  !is.null(reactiveData())
+})
+
+# Ensure that reactive object for condition is set up properly for UI
+outputOptions(output, 
+              'showSaveButton', 
+              suspendWhenHidden = FALSE)
+
+```
+
+Column {data-width=225}
+------------------------------------------------------
+
+### Dataset
+
+```{r}
+
+## UI Logic
+# No UI logic in this section
+
+## Server Logic
+# Render ingested dataset as DataTable
+renderDataTable({
+  # Require data for continuation
+  req(reactiveData())
+  
+  # Render table with centered data
+  datatable(reactiveData(), 
+            options = list(columnDefs = list(list(className = 'dt-center', targets = '_all'))))  
+})
+
+## Observer Logic
+# No observer logic in this section
+
+```
+
+### Model Solution
+
+```{r}
+
+## UI Logic
+# Output placeholder for displaying model solution
+verbatimTextOutput('modelSolution')
+
+## Server Logic
+# No server logic in this section
+
+## Observer Logic
+# Observe button click and update model solution
+observeEvent(input$fitModel, {
+  # Render and display fitted model solution
+  output$modelSolution <- renderPrint({
+    isolate({
+      withProgress(message = 'Fitting model...', value = 0, {
+        # Update progress
+        incProgress(0.3)
+        
+        # Check for presence of data
+        if (is.null(reactiveData())){
+          showNotification('No data found. Please upload a valid dataset.', 
+                           type = 'error')
+        
+        } else {
+          tryCatch({
+            # Simulate fitting delay
+            Sys.sleep(2)
+          
+            # Attempt to fit and visualize the model
+            summary <- wrangleFitVisualize(reactiveData(), 
+                                           input$sliderA,
+                                           input$sliderB, 
+                                           input$sliderC, 
+                                           input$sliderD, 
+                                           input$sliderE,
+                                           input$modelType, 
+                                           visualize = FALSE)
+            
+            # Update progress
+            incProgress(0.6)
+            
+            # Summary X/O
+            return(summary)
+            
+          }, error = function(e) {
+            # Error notification
+            showNotification('Error fitting model. Please check model params.', 
+                             type = 'error')
+          })
+        }
+        
+        # Update progress
+        incProgress(1)
+      })
+      
+      # Supress NULL
+      invisible(NULL)
+    })
+  })
+})
+
+```
+
+Column {}
+------------------------------------------------------
+
+### Visualization
+
+```{r}
+
+## UI Logic
+# Render placeholder for displaying plot
+plotOutput('plotArea')
+
+## Server Logic
+# Render 'base' plot upon data upload
+observe({
+  # Check for presence of data
+  if (is.null(reactiveData())) return(NULL)
+  
+  # Auto-rendering of 'base' plot upon data ingestion
+  output$plotArea <- renderPlot({
+    # Require data for continuation
+    req(reactiveData())
+    
+    # Plot initial data
+    plotFigure(reactiveData(), input$ylim)
+  })
+})
+
+## Observer Logic
+# Observe fit model button click and update plot
+observeEvent(input$fitModel, {
+  output$plotArea <- renderPlot({
+    isolate({
+      tryCatch({
+        # Require data for continuation
+        req(reactiveData())
+      
+        # Plot initial data
+        plotFigure(reactiveData(), input$ylim)
+      
+        # Add model curves to data viz
+        wrangleFitVisualize(reactiveData(),
+                            input$sliderA, 
+                            input$sliderB, 
+                            input$sliderC, 
+                            input$sliderD, 
+                            input$sliderE, 
+                            input$modelType)
+          
+      }, error = function(e){
+        # NULL X/O
+        return(NULL)
+      })
+      
+      # Suppress NULL
+      invisible(NULL)
+    })
+  })
+})
+
+```
