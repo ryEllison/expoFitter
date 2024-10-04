@@ -53,7 +53,7 @@ include_graphics('.\\static\\hex.png')
 
 # Overview
 
-**expoFitter** is a specialized tool for visualizing and fitting non-linear electrophysiological data, built using _R Shiny_ and _flexdashboard_. Designed to model slow neuronal currents like the calcium-dependent potassium current ($I_{KCa}$), **expoFitter** provides robust methodologies for fitting and analyzing current kinetics through single- and double-exponential models. This allows researchers to extract time constants and assess model fitness, giving insight into current dynamics. While expoFitter does not directly measure intracellular calcium ($[Ca^{2+}]_i$) dynamics, the tool's modeling logic and uncovered temporal information has been effectively used as an indirect measure of $[Ca^{2+}]_i$ changes in neurons of the lobster pyloric network, as demonstrated in ongoing research (Ellison et al., _in progress_; Thuma et al., _in progress_). The tool's robust non-linear least squares optimization makes it highly effective for studying slow electrophysiological processes.
+**expoFitter** is a specialized tool for visualizing and fitting non-linear electrophysiological data, built using R, shiny, and flexdashboard. Designed to model slow neuronal currents like the calcium-dependent potassium current ($I_{KCa}$), **expoFitter** provides robust methodologies for fitting and analyzing current kinetics through single- and double-exponential models. This allows researchers to extract time constants and assess model fitness, giving insight into current dynamics. While expoFitter does not directly measure intracellular calcium ($[Ca^{2+}]_i$) dynamics, the tool's modeling logic and uncovered temporal information has been effectively used as an indirect measure of $[Ca^{2+}]_i$ changes in neurons of the lobster pyloric network, as demonstrated in ongoing research (Ellison et al., _in progress_; Thuma et al., _in progress_). The tool's robust non-linear least squares optimization makes it highly effective for studying slow electrophysiological processes.
 
 # Tool Features
 
@@ -70,7 +70,8 @@ include_graphics('.\\static\\hex.png')
   - **Double-Exponential Model**: 
   
   $$I = A e^{-\frac{t}{B}} + C e^{-\frac{t}{D}} + E$$
-where $B$ and $D$ represent the time constants of the first and second phase of the exponential curve, respectively.
+
+  where $B$ and $D$ represent the time constants of the first and second phase of the exponential curve, respectively.
 
 - **Interactive Visualization and Model Parameter Adjustment**: Provides a fully interactive interface for data visualization and model fitting, enabling users to dynamically adjust model parameters through sliders and observe the resultant model solution both quantitatively and visually.
 
@@ -102,12 +103,25 @@ and your system's environmental variables provide terminal access to `R`'s inter
 **expoFitter** has also been built as a portable, desktop `Electron` app. The `Electron` build can be found in the `\electron` directory. However, for access to the desktop app the `\installer` directory can be downloaded using this terminal approach:
 
   ```bash
-  git clone https://github.com/ryEllison/expoFitter/installer.git
+  git clone --no-checkout https://github.com/ryEllison/expoFitter.git
   cd expoFitter
-  pseudo_installer
+  git sparse-checkout init --cone
+  git sparse-checkout set ./installer
+  git checkout master
+  cd installer
+  pseudo_installer.bat
   ```
+Again, ensuring you are in the directory where you wish the installer to be placed before executing the terminal commands. 
 
-### **expoFitter** on Shinyapp.io
+You can also use a point-and-click approach and directly download the installer using the hyperlink below:
+
+[Installer]()
+
+Downloading **expoFitter** this way will require your moving the installer from your local downloads to the desired location on your machine before executing the `pseudo-installer` pseudo-executable.
+
+### **expoFitter** on shinyapps.io
+
+Lastly, **expoFitter** has been made publicly available as a web app, which is hosted on [shinyapps.io](https://www.shinyapps.io/), and can be accessed using [https://ryellison.shinyapps.io/expofitter/](https://ryellison.shinyapps.io/expofitter/).
 
 <!-- # Usage -->
 

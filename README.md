@@ -4,8 +4,8 @@
 # Overview
 
 **expoFitter** is a specialized tool for visualizing and fitting
-non-linear electrophysiological data, built using *R Shiny* and
-*flexdashboard*. Designed to model slow neuronal currents like the
+non-linear electrophysiological data, built using R, shiny, and
+flexdashboard. Designed to model slow neuronal currents like the
 calcium-dependent potassium current ($I_{KCa}$), **expoFitter** provides
 robust methodologies for fitting and analyzing current kinetics through
 single- and double-exponential models. This allows researchers to
@@ -47,9 +47,10 @@ studying slow electrophysiological processes.
 
   - **Double-Exponential Model**:
 
-  $$I = A e^{-\frac{t}{B}} + C e^{-\frac{t}{D}} + E$$ where $B$ and $D$
-  represent the time constants of the first and second phase of the
-  exponential curve, respectively.
+  $$I = A e^{-\frac{t}{B}} + C e^{-\frac{t}{D}} + E$$
+
+  where $B$ and $D$ represent the time constants of the first and second
+  phase of the exponential curve, respectively.
 
 - **Interactive Visualization and Model Parameter Adjustment**: Provides
   a fully interactive interface for data visualization and model
@@ -103,12 +104,32 @@ However, for access to the desktop app the `\installer` directory can be
 downloaded using this terminal approach:
 
 ``` bash
-git clone https://github.com/ryEllison/expoFitter/installer.git
+git clone --no-checkout https://github.com/ryEllison/expoFitter.git
 cd expoFitter
-pseudo_installer
+git sparse-checkout init --cone
+git sparse-checkout set ./installer
+git checkout master
+cd installer
+pseudo_installer.bat
 ```
 
-### **expoFitter** on Shinyapp.io
+Again, ensuring you are in the directory where you wish the installer to
+be placed before executing the terminal commands.
+
+You can also use a point-and-click approach and directly download the
+installer using the hyperlink below:
+
+[Installer]()
+
+Downloading **expoFitter** this way will require your moving the
+installer from your local downloads to the desired location on your
+machine before executing the `pseudo-installer` pseudo-executable.
+
+### **expoFitter** on shinyapps.io
+
+Lastly, **expoFitter** has been made publicly available as a web app,
+which is hosted on [shinyapps.io](https://www.shinyapps.io/), and can be
+accessed using <https://ryellison.shinyapps.io/expofitter/>.
 
 <!-- # Usage -->
 <!-- ### Data Input -->
