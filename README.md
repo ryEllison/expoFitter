@@ -1,10 +1,7 @@
 
-<div style="text-align: center;">
-
-<img src = ".\\static\\hex.png" alt = "" style = "width: 22.5%;"/>
-
-</div>
-
+<p align="center">
+<img src=".\\static\\hex.png" alt="" style="width:25%;">
+</p>
 <!-- ```{r, hex, eval = TRUE, echo = FALSE, message = FALSE, fig.align = 'center', out.width = '22.5%', out.height = '22.5%'} -->
 <!-- ##Sys block -->
 <!-- options(warn = -1) -->
