@@ -3,60 +3,63 @@ output:
   github_document:
     keep_html: TRUE
 ---
-        
-```{r, hex, eval = TRUE, echo = FALSE, message = FALSE, fig.align = 'center', out.width = '25%', out.height = '25%'}
 
-##Sys block
-options(warn = -1)
+<div style = "text-align: center;">
+  <img src = ".\\static\\hex.png" alt = "" style = "width: 22.5%;"/>
+</div>
 
-##Library block
-#Dependency check and/or installation
-dependencies <- c('showtext',
-		              'hexSticker',
-		              'knitr')
+<!-- ```{r, hex, eval = TRUE, echo = FALSE, message = FALSE, fig.align = 'center', out.width = '22.5%', out.height = '22.5%'} -->
 
-for (i in dependencies){
-	if (i %in% rownames(installed.packages()) == TRUE){
-	  library(i, character.only = TRUE)
+<!-- ##Sys block -->
+<!-- options(warn = -1) -->
 
-	} else {
-	  install.packages(i, repos = 'http://cran.rstudio.com/')
+<!-- ##Library block -->
+<!-- #Dependency check and/or installation -->
+<!-- dependencies <- c('showtext', -->
+<!-- 		              'hexSticker', -->
+<!-- 		              'knitr') -->
 
-	  library(i, character.only = TRUE)
-	}
-}
-# 
-# ##Code block
-# font_add_google('Righteous', 'text')
-# showtext_auto()
-# 
-# sticker('.\\static\\img.jpg', 
-#         package = 'expoFitter',
-#         p_size = 125,
-#         p_family = 'text',
-#         p_color = 'black',
-#         p_x = 1,
-#         p_y = 1,
-#         h_fill = 'black',
-#         h_color = 'black',
-#         h_size = 1,
-#         s_x = 1,
-#         s_y = 1,
-#         s_width = 1,
-#         s_height = 1,
-#         filename = '.\\static\\hex.png',
-#         dpi = 2000)
+<!-- for (i in dependencies){ -->
+<!-- 	if (i %in% rownames(installed.packages()) == TRUE){ -->
+<!-- 	  library(i, character.only = TRUE) -->
 
-include_graphics('.\\static\\hex.png')
+<!-- 	} else { -->
+<!-- 	  install.packages(i, repos = 'http://cran.rstudio.com/') -->
 
-```
+<!-- 	  library(i, character.only = TRUE) -->
+<!-- 	} -->
+<!-- } -->
+
+<!-- ##Code block -->
+<!-- font_add_google('Righteous', 'text') -->
+<!-- showtext_auto() -->
+
+<!-- sticker('.\\static\\img.jpg', -->
+<!--         package = 'expoFitter', -->
+<!--         p_size = 125, -->
+<!--         p_family = 'text', -->
+<!--         p_color = 'black', -->
+<!--         p_x = 1, -->
+<!--         p_y = 1, -->
+<!--         h_fill = 'black', -->
+<!--         h_color = 'black', -->
+<!--         h_size = 1, -->
+<!--         s_x = 1, -->
+<!--         s_y = 1, -->
+<!--         s_width = 1, -->
+<!--         s_height = 1, -->
+<!--         filename = '.\\static\\hex.png', -->
+<!--         dpi = 2000) -->
+
+<!-- include_graphics('.\\static\\hex.png') -->
+
+<!-- ``` -->
 
 # Overview
 
-**expoFitter** is a specialized tool for visualizing and fitting non-linear electrophysiological data, built using R, Shiny, and Flexdashboard. The tool provides robust methodologies for fitting current kinetics through single- and double-exponential models, allowing researchers to extract time constants and assess model fitness. Its robust non-linear least squares optimization (see Supp
-processes.
+**expoFitter** is a specialized tool for visualizing and fitting non-linear electrophysiological data, built using R, Shiny, and Flexdashboard. The tool provides robust methodologies for fitting dynamic processes through single- and double-exponential models, allowing researchers to extract time constants and assess model fitness. Its robust non-linear least squares optimization makes **expoFitter** efficient for fitting complex data.
 
-In scientific applications, **expoFitter**, or its backend logic, has been used to analyze slow neuronal currents like the calcium-dependent potassium current ($I_{KCa}$; Ellison et al., in progress; Thuma et al., in progress). While it does not directly measure intracellular calcium ($[Ca^{2+}]_i$) dynamics, the tool's modeling logic and extracted temporal information have served as indirect measures of $[Ca^{2+}]_i$ time-dependent changes in neurons of the lobster pyloric network, as demonstrated in ongoing research (Ellison et al., in progress; Thuma et al., in progress).
+In scientific applications, **expoFitter**, or its backend logic, has been used to analyze slow neuronal currents like the calcium-dependent potassium current ($I_{KCa}$; Ellison et al., in progress; Thuma et al., in progress). While it does not directly measure intracellular calcium ($[Ca^{2+}]_i$) dynamics, the tool's modeling logic and uncovered temporal information have served as indirect measures of $[Ca^{2+}]_i$ time-dependent changes in neurons of the lobster pyloric network, as demonstrated in ongoing research (Ellison et al., in progress; Thuma et al., in progress).
 
 # Tool Features
 
