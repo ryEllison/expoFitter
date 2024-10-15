@@ -10,7 +10,6 @@ TITLE Construct README
 echo [31m~! Building README from .rmd source !~[0m
 
 :: Call R interpreter and render .rmd file
-echo:
 Rscript -e "rmarkdown::render('../rmd/README.rmd', quiet = TRUE)"
 
 :: System pause before moving docs

@@ -4,20 +4,21 @@
 # Overview
 
 **expoFitter** is a specialized tool for visualizing and fitting
-non-linear electrophysiological data, built using R, shiny, and
-flexdashboard. Designed to model slow neuronal currents like the
-calcium-dependent potassium current ($I_{KCa}$), **expoFitter** provides
-robust methodologies for fitting and analyzing current kinetics through
-single- and double-exponential models. This allows researchers to
-extract time constants and assess model fitness, giving insight into
-current dynamics. While expoFitter does not directly measure
-intracellular calcium ($[Ca^{2+}]_i$) dynamics, the tool’s modeling
-logic and uncovered temporal information has been effectively used as an
-indirect measure of $[Ca^{2+}]_i$ changes in neurons of the lobster
-pyloric network, as demonstrated in ongoing research (Ellison et al.,
-*in progress*; Thuma et al., *in progress*). The tool’s robust
-non-linear least squares optimization makes it highly effective for
-studying slow electrophysiological processes.
+non-linear electrophysiological data, built using R, Shiny, and
+Flexdashboard. The tool provides robust methodologies for fitting
+current kinetics through single- and double-exponential models, allowing
+researchers to extract time constants and assess model fitness. Its
+robust non-linear least squares optimization (see Supp processes.
+
+In scientific applications, **expoFitter**, or its backend logic, has
+been used to analyze slow neuronal currents like the calcium-dependent
+potassium current ($I_{KCa}$; Ellison et al., in progress; Thuma et al.,
+in progress). While it does not directly measure intracellular calcium
+($[Ca^{2+}]_i$) dynamics, the tool’s modeling logic and extracted
+temporal information have served as indirect measures of $[Ca^{2+}]_i$
+time-dependent changes in neurons of the lobster pyloric network, as
+demonstrated in ongoing research (Ellison et al., in progress; Thuma et
+al., in progress).
 
 # Tool Features
 
@@ -28,7 +29,7 @@ studying slow electrophysiological processes.
   essential for isolating active portions of the current.
 
 - **Native Model Parameter Approximator**: Integrates approximator
-  functionality automating model initial-conditional estimates based on
+  functionality automating model initial condition estimates based on
   quintessential features of the experimental data. Given the robustness
   of the optimizer, this reduces the need for manual adjustment of these
   parameters by the user.
@@ -38,8 +39,8 @@ studying slow electrophysiological processes.
   from the `minpack.lm` package. The `nlsLM` algorithm implements the
   *Levenberg-Marquardt Algorithm*, which combines gradient descent and
   the Gauss-Newton method for robust non-linear least squares
-  optimization (see Supplemental Information below). The application
-  fits experimental data using the following exponential models:
+  optimization (see Supplemental Information). The application fits
+  experimental data using the following exponential models:
 
   - **Single-Exponential Model**:
 
@@ -53,10 +54,10 @@ studying slow electrophysiological processes.
   phase of the exponential curve, respectively.
 
 - **Interactive Visualization and Model Parameter Adjustment**: Provides
-  a fully interactive interface for data visualization and model
-  fitting, enabling users to dynamically adjust model parameters through
-  sliders and observe the resultant model solution both quantitatively
-  and visually.
+  an interactive interface for data visualization and model fitting,
+  enabling users to dynamically adjust model parameters through sliders
+  and observe the resultant model solution both quantitatively and
+  visually.
 
 # Installation
 
@@ -74,8 +75,17 @@ cd expoFitter
 Ensure you are in the desired directory before executing the terminal
 commands. You can also use a point-and-click approach by navigating to
 *Code* in Github and selecting *Download ZIP*. Downloading
-**expoFitter** this way will require your moving expoFitter from your
-local Downloads to the desired location on your machine.
+**expoFitter** this way will require your moving **expoFitter** from
+your local downloads to the desired location on your machine before
+decompressing the file.
+
+<!-- ```{r, hex, eval = TRUE, echo = FALSE, message = FALSE, fig.align = 'center', out.width = '25%', out.height = '25%'} -->
+<!-- ##Sys block -->
+<!-- options(warn = -1) -->
+<!-- ##Library block -->
+<!-- library(knitr) -->
+<!-- include_graphics('.\\static\\hex.png') -->
+<!-- ``` -->
 
 To run **expoFitter** locally, ensure that `R` is installed on your
 system, as well as the following packages:
@@ -117,49 +127,100 @@ Again, ensuring you are in the directory where you wish the installer to
 be placed before executing the terminal commands.
 
 You can also use a point-and-click approach and directly download the
-installer using the hyperlink below:
+installer by navigating to the `installer.zip`, the ellipsis option in
+the upper right corner, and selecting download (or, using the respective
+keyboard shortcuts once `installer.zip` has been accessed, e.g.,
+`CTRL + SHIFT + S`). Downloading **expoFitter** this way will require
+your moving the installer from your local downloads to the desired
+location on your machine before decompressing the file and executing the
+`pseudo-installer` pseudo-executable.
 
-[Installer]()
-
-Downloading **expoFitter** this way will require your moving the
-installer from your local downloads to the desired location on your
-machine before executing the `pseudo-installer` pseudo-executable.
+<!-- ```{r, hex, eval = TRUE, echo = FALSE, message = FALSE, fig.align = 'center', out.width = '25%', out.height = '25%'} -->
+<!-- ##Sys block -->
+<!-- options(warn = -1) -->
+<!-- ##Library block -->
+<!-- library(knitr) -->
+<!-- include_graphics('.\\static\\hex.png') -->
+<!-- ``` -->
 
 ### **expoFitter** on shinyapps.io
 
 Lastly, **expoFitter** has been made publicly available as a web app,
-which is hosted on [shinyapps.io](https://www.shinyapps.io/), and can be
+which is hosted on [shinyapps.io](https://www.shinyapps.io/) and can be
 accessed using <https://ryellison.shinyapps.io/expofitter/>.
 
-<!-- # Usage -->
-<!-- ### Data Input -->
-<!-- - Upload a `.csv` file containing time and current data. Ensure that the file has at least two columns: -->
-<!--     - Column 1: Time (in seconds) -->
-<!--     - Column 2: Current (in nanoamps) -->
-<!-- ### Model Initialization -->
-<!-- - **Select Model**: Choose between a 'Single-Exponential,' 'Double-Exponential,' or 'Both' models from the dropdown menu. -->
-<!-- - **Adjust Parameters**: Use the sliders to set initial values for model parameters (`A`, `B`, `C`, `D`, etc.). -->
-<!-- ### Visualization and Fitting -->
-<!-- - **Visualize Data**: The app plots the input current vs. time data automatically. -->
-<!-- - **Fit Model**: Click the 'Fit Model' button to apply the selected model to the data and visualize the fitted curve. -->
-<!-- ### Saving Results -->
-<!-- - Once the model fitting is complete, you can save the resulting plot as a `.pdf` file by clicking the 'Save' button in the interface. -->
-<!-- ### Output -->
-<!-- - Model parameters, R² values, and fitting summaries are displayed in the 'Model Solution' section, providing quantitative feedback on the model's performance. -->
-<!-- # Contact Information -->
-<!-- For further questions or collaborations, feel free to contact the project developer: -->
-<!-- **Ryan Ellison, PhD**   -->
-<!-- Neuroscientist   -->
-<!-- [ryan.dean.ellison@gmail.com](mailto:ryan.dean.ellison@gmail.com)   -->
-<!-- Graduate, Ohio University (Neuroscience; Computational Neuroscience, AI/ML) -->
-<!-- # Acknowledgments -->
-<!-- This application is inspired by Dr. Ellison's research in computational neuroscience, focusing on the analysis of electrophysiological processes in motor control and neural activity. The design leverages Dr. Ellison's expertise in both the computational and experimental realms of neuroscience. -->
-<!-- ### Contact Information -->
-<!-- For further questions or collaboration, please contact: -->
-<!-- **Ryan Ellison, PhD**   -->
-<!-- [Email](mailto:ryan.dean.ellison@gmail.com) | [GitHub](https://github.com/ryEllison) -->
-<!-- # Additional Resources -->
-<!-- For more details on the scientific basis and applications of the expoFitter tool, please refer to Dr. Ellison's publications and research in computational neuroscience and electrophysiological data analysis. -->
+# Usage
+
+### Data Input
+
+- Upload a `.csv` file using `Browse...` under `Select File` containing
+  electrophysiological (e.g., neuronal current) time-series data. Ensure
+  the dataset has *at least* two columns, e.g.,
+
+<!-- ```{r, hex, eval = TRUE, echo = FALSE, message = FALSE, fig.align = 'center', out.width = '25%', out.height = '25%'} -->
+<!-- ##Sys block -->
+<!-- options(warn = -1) -->
+<!-- ##Library block -->
+<!-- library(knitr) -->
+<!-- include_graphics('.\\static\\hex.png') -->
+<!-- ``` -->
+
+where, in this example, $t$ is time in seconds (s) and $i$ is current
+data in nanoamps (nA).
+
+- The backend logic of **expoFitter** relies on positional encoding of
+  the data (i.e., utilizes data structure indices for lazy data
+  handling). This, however, makes **expoFitter** more robust in data
+  preparation as column name is inconsequential. All of this is to say,
+  ensure that the dataset is ordered column-wise where the first column
+  contains time data and the second column contains the dynamic process
+  data. If there are more than two columns, column order after the
+  second column is trivial.
+
+### Model Selection and Initialization
+
+- The `Select Model` dropdown menu under `Model Initialization` allows
+  the user to choose between a ‘Single-Exponential,’
+  ‘Double-Exponential,’ or the implementation of ‘Both’ models.
+
+- The native model parameter approximator auto-estimates initial
+  conditions based on the data and selected model. The sliders can be
+  used to adjust model parameter (`A`, `B`, `C`, `D`, etc.) initial
+  values if the auto-estimated parameters fail.
+
+- The `Fit Model` button must be clicked to run model.
+
+### Visualization, Fitting, and Performance Reporting
+
+- **expoFitter** automatically visualizes the time-series data it
+  ingests.
+
+- Once `Fit Model` is clicked as described above, **expoFitter** will
+  utilize the model parameters auto-estimated or manually selected
+  through alteration of the sliders and then fit the model to the
+  dynamic process using non-linear least squares optimization (see
+  Supplemental Information).
+
+- When the model(s) error minimization is complete, the model fit is
+  visualized in the figure.
+
+- The performance report is provided in the `Model Solution` section,
+  showing the best fit model’s parameters and a quantitative summary of
+  model fitness.
+
+### Saving Results
+
+- When data is uploaded to **expoFitter** the save functionality
+  dynamically appears.
+
+- The user can save the base plot of the electrophysiology data by
+  selecting `Save` before fitting a model.
+
+- Once a model is fit to the data, the figure observed in the
+  `Visualization` section can be saved by clicking the `Save` button in
+  the interface.
+
+All visualizations are saved as a `.pdf` file.
 
 # Supplemental Information
 
