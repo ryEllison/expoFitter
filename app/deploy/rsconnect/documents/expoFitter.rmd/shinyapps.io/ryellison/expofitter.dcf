@@ -5,6 +5,6 @@ account: ryellison
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 11564335
-bundleId: 9227427
+bundleId: 9231897
 url: https://ryellison.shinyapps.io/expofitter/
 version: 1

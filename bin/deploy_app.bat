@@ -11,7 +11,7 @@ echo [31m~! Executing deployment script !~[0m
 
 :: Call R interpreter and .R file
 echo:
-Rscript ../scripts/deploy.R
+Rscript "..\scripts\deploy.R"
 
 :: System pause before closure of terminal
 echo:

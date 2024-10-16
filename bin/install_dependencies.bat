@@ -11,7 +11,7 @@ echo [31m~! Checking/installing requisite dependendencies !~[0m
 
 :: Call R interpreter and .R file
 echo:
-Rscript ../scripts/install.R
+Rscript "..\scripts\install.R"
 
 :: System pause before closure of terminal
 pause

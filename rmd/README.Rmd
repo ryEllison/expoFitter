@@ -55,7 +55,7 @@ knitr::include_graphics('.\\rmd\\static\\hex.png')
 
 **expoFitter** is a specialized tool for visualizing and fitting non-linear electrophysiological data, built using R, Shiny, and Flexdashboard. The tool provides robust methodologies for fitting dynamic processes through single- and double-exponential models, allowing researchers to extract time constants and assess model fitness. Its robust non-linear least squares optimization makes **expoFitter** efficient for fitting complex data.
 
-In scientific applications, **expoFitter**, or its backend logic, has been used to analyze slow neuronal currents like the calcium-dependent potassium current ($I_{KCa}$; Ellison et al., in progress; Thuma et al., in progress). While it does not directly measure intracellular calcium ($[Ca^{2+}]_i$) dynamics, the tool's modeling logic and uncovered temporal information have served as indirect measures of $[Ca^{2+}]_i$ time-dependent changes in neurons of the lobster pyloric network, as demonstrated in ongoing research (Ellison et al., in progress; Thuma et al., in progress).
+In scientific applications, **expoFitter**, or its backend logic, has been used to analyze slow neuronal currents like the calcium-dependent potassium current ($I_{KCa}$; Ellison et al., in progress; Thuma et al., in progress). While it does not directly measure intracellular calcium ($[Ca^{2+}]_i$) dynamics, the tool's modeling logic and resulting uncovered temporal information have been used to indirectly measure $[Ca^{2+}]_i$ time-dependent changes in neurons of the lobster pyloric network, as demonstrated in ongoing research (Ellison et al., in progress; Thuma et al., in progress).
 
 # Tool Features
 
@@ -81,7 +81,7 @@ In scientific applications, **expoFitter**, or its backend logic, has been used 
 
 ### **expoFitter** Locally
 
-There are several ways to access **expoFitter**. If you want the entirety of the repository, you can clone it to your local machine using these _terminal_ commands (_terminal_ used generically throughout):
+There are several ways to access **expoFitter**. If you want the entirety of the repository, you can clone it to your local machine using these terminal commands (_terminal_ used generically throughout):
 
   ```bash
   git clone https://github.com/ryEllison/expoFitter.git
@@ -131,7 +131,7 @@ and your system's environmental variables provide terminal access to `R`'s inter
   ```
 Again, ensuring you are in the directory where you wish the installer to be placed before executing the terminal commands. 
 
-You can also use a point-and-click approach and directly download the installer by navigating to the `installer.zip`, the ellipsis option in the upper right corner (Figure 3), and selecting download (Figure 4; or, using the respective keyboard shortcuts once `installer.zip` has been accessed, e.g., `CTRL + SHIFT + S`). Downloading **expoFitter** this way will require your moving the installer from your local downloads to the desired location on your machine before decompressing the file and executing the `pseudo-installer` pseudo-executable.
+You can also use a point-and-click approach to directly download the installer by navigating to `installer.zip`, clicking the _ellipsis_ in the upper right corner (Figure 3), and selecting _Download_ (Figure 4; or, using the respective keyboard shortcuts once `installer.zip` has been accessed, e.g., `CTRL + SHIFT + S`). Downloading **expoFitter** this way will require your moving the installer from your local downloads to the desired location on your machine before decompressing the file and executing the `pseudo-installer` pseudo-executable.
 
 ```{r, fig3, eval = TRUE, echo = FALSE, message = FALSE, fig.align = 'center', fig.cap = 'Figure 3. Location of ellipsis option in upper right corner.'}
 
@@ -141,7 +141,7 @@ knitr::include_graphics('.\\rmd\\static\\ellipsis.png')
 
 <br>
 
-```{r, fig4, eval = TRUE, echo = FALSE, message = FALSE, fig.align = 'center', fig.cap = 'Figure 4. Select download from ellipsis dropdown.'}
+```{r, fig4, eval = TRUE, echo = FALSE, message = FALSE, fig.align = 'center', fig.cap = 'Figure 4. Select Download from ellipsis dropdown.'}
 
 knitr::include_graphics('.\\rmd\\static\\download.png')
 
@@ -193,7 +193,7 @@ after the second column is trivial.
 
 - When data is uploaded to **expoFitter** the save functionality dynamically appears. 
 
-- The user can save the base plot of the electrophysiology data by selecting `Save` before fitting a model.
+- The user can save the base plot of the electrophysiological data by selecting `Save` before fitting a model.
 
 - Once a model is fit to the data, the figure observed in the `Visualization` section can be saved by clicking the `Save` button in the interface.
 

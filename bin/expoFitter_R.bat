@@ -11,7 +11,7 @@ echo [31m~! Hosting app using machine as local server !~[0m
 
 :: Start R interpreter in background to deploy app to fixed port
 echo:
-start /B Rscript ../scripts/launch.R
+start /B Rscript "..\scripts\launch.R"
 
 :: Launch app via default browser on local, fixed port
 start http://127.0.0.1:3838

@@ -15,11 +15,11 @@ In scientific applications, **expoFitter**, or its backend logic, has
 been used to analyze slow neuronal currents like the calcium-dependent
 potassium current ($I_{KCa}$; Ellison et al., in progress; Thuma et al.,
 in progress). While it does not directly measure intracellular calcium
-($[Ca^{2+}]_i$) dynamics, the tool’s modeling logic and uncovered
-temporal information have served as indirect measures of $[Ca^{2+}]_i$
-time-dependent changes in neurons of the lobster pyloric network, as
-demonstrated in ongoing research (Ellison et al., in progress; Thuma et
-al., in progress).
+($[Ca^{2+}]_i$) dynamics, the tool’s modeling logic and resulting
+uncovered temporal information have been used to indirectly measure
+$[Ca^{2+}]_i$ time-dependent changes in neurons of the lobster pyloric
+network, as demonstrated in ongoing research (Ellison et al., in
+progress; Thuma et al., in progress).
 
 # Tool Features
 
@@ -66,7 +66,7 @@ al., in progress).
 
 There are several ways to access **expoFitter**. If you want the
 entirety of the repository, you can clone it to your local machine using
-these *terminal* commands (*terminal* used generically throughout):
+these terminal commands (*terminal* used generically throughout):
 
 ``` bash
 git clone https://github.com/ryEllison/expoFitter.git
@@ -141,14 +141,14 @@ pseudo_installer.bat
 Again, ensuring you are in the directory where you wish the installer to
 be placed before executing the terminal commands.
 
-You can also use a point-and-click approach and directly download the
-installer by navigating to the `installer.zip`, the ellipsis option in
-the upper right corner (Figure 3), and selecting download (Figure 4; or,
-using the respective keyboard shortcuts once `installer.zip` has been
-accessed, e.g., `CTRL + SHIFT + S`). Downloading **expoFitter** this way
-will require your moving the installer from your local downloads to the
-desired location on your machine before decompressing the file and
-executing the `pseudo-installer` pseudo-executable.
+You can also use a point-and-click approach to directly download the
+installer by navigating to `installer.zip`, clicking the *ellipsis* in
+the upper right corner (Figure 3), and selecting *Download* (Figure 4;
+or, using the respective keyboard shortcuts once `installer.zip` has
+been accessed, e.g., `CTRL + SHIFT + S`). Downloading **expoFitter**
+this way will require your moving the installer from your local
+downloads to the desired location on your machine before decompressing
+the file and executing the `pseudo-installer` pseudo-executable.
 
 <div class="figure" style="text-align: center">
 
@@ -163,9 +163,9 @@ Figure 3. Location of ellipsis option in upper right corner.
 
 <div class="figure" style="text-align: center">
 
-<img src=".\rmd\static\download.png" alt="Figure 4. Select download from ellipsis dropdown."  />
+<img src=".\rmd\static\download.png" alt="Figure 4. Select Download from ellipsis dropdown."  />
 <p class="caption">
-Figure 4. Select download from ellipsis dropdown.
+Figure 4. Select Download from ellipsis dropdown.
 </p>
 
 </div>
@@ -239,7 +239,7 @@ in nanoamps (nA).
 - When data is uploaded to **expoFitter** the save functionality
   dynamically appears.
 
-- The user can save the base plot of the electrophysiology data by
+- The user can save the base plot of the electrophysiological data by
   selecting `Save` before fitting a model.
 
 - Once a model is fit to the data, the figure observed in the
