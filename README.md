@@ -1,5 +1,5 @@
 
-<img src=".\static\hex.jpg" width="25%" height="25%" style="display: block; margin: auto;" />
+<img src=".\static\hex.png" width="25%" height="25%" style="display: block; margin: auto;" />
 
 # Overview
 
@@ -75,12 +75,32 @@ cd expoFitter
 
 Ensure you are in the desired directory before executing the terminal
 commands. You can also use a point-and-click approach by navigating to
-*Code* in Github and selecting *Download ZIP*. Downloading
-**expoFitter** this way will require your moving **expoFitter** from
-your local downloads to the desired location on your machine before
-decompressing the file.
+*Code* in Github (Figure 1) and selecting *Download ZIP* (Figure 2).
+Downloading **expoFitter** this way will require your moving
+**expoFitter** from your local downloads to the desired location on your
+machine before decompressing the file.
 
-<img src=".\static\hex.png" width="25%" height="25%" style="display: block; margin: auto;" />
+<div class="figure" style="text-align: center">
+
+<img src=".\static\code.png" alt="Figure 1. Navigate to Code in Github."  />
+<p class="caption">
+Figure 1. Navigate to Code in Github.
+</p>
+
+</div>
+
+<br>
+
+<div class="figure" style="text-align: center">
+
+<img src=".\static\downloadZIP.png" alt="Figure 2. Select Download ZIP."  />
+<p class="caption">
+Figure 2. Select Download ZIP.
+</p>
+
+</div>
+
+<br>
 
 To run **expoFitter** locally, ensure that `R` is installed on your
 system, as well as the following packages:
@@ -123,14 +143,32 @@ be placed before executing the terminal commands.
 
 You can also use a point-and-click approach and directly download the
 installer by navigating to the `installer.zip`, the ellipsis option in
-the upper right corner, and selecting download (or, using the respective
-keyboard shortcuts once `installer.zip` has been accessed, e.g.,
-`CTRL + SHIFT + S`). Downloading **expoFitter** this way will require
-your moving the installer from your local downloads to the desired
-location on your machine before decompressing the file and executing the
-`pseudo-installer` pseudo-executable.
+the upper right corner (Figure 3), and selecting download (Figure 4; or,
+using the respective keyboard shortcuts once `installer.zip` has been
+accessed, e.g., `CTRL + SHIFT + S`). Downloading **expoFitter** this way
+will require your moving the installer from your local downloads to the
+desired location on your machine before decompressing the file and
+executing the `pseudo-installer` pseudo-executable.
 
-<img src=".\static\hex.png" width="25%" height="25%" style="display: block; margin: auto;" />
+<div class="figure" style="text-align: center">
+
+<img src=".\static\ellipsis.png" alt="Figure 3. Location of ellipsis option in upper right corner."  />
+<p class="caption">
+Figure 3. Location of ellipsis option in upper right corner.
+</p>
+
+</div>
+
+<br>
+
+<div class="figure" style="text-align: center">
+
+<img src=".\static\download.png" alt="Figure 4. Select download from ellipsis dropdown."  />
+<p class="caption">
+Figure 4. Select download from ellipsis dropdown.
+</p>
+
+</div>
 
 ### **expoFitter** on shinyapps.io
 
@@ -146,10 +184,15 @@ accessed using <https://ryellison.shinyapps.io/expofitter/>.
   electrophysiological (e.g., neuronal current) time-series data. Ensure
   the dataset has *at least* two columns, e.g.,
 
-<img src=".\static\hex.png" width="25%" height="25%" style="display: block; margin: auto;" />
+<div class="figure" style="text-align: center">
 
-where, in this example, $t$ is time in seconds (s) and $i$ is current
-data in nanoamps (nA).
+<img src=".\static\dataset.png" alt="In this example dataset, t is time in seconds (s) and i is current data in nanoamps (nA)."  />
+<p class="caption">
+In this example dataset, t is time in seconds (s) and i is current data
+in nanoamps (nA).
+</p>
+
+</div>
 
 - The backend logic of **expoFitter** relies on positional encoding of
   the data (i.e., utilizes data structure indices for lazy data
