@@ -254,7 +254,7 @@ trajectory reveals extremely slow (seconds-long) $[Ca]_{i}$ removal
 dynamics in a lobster pyloric neuron.
 
 Thuma, J.B., **Ellison, R.**, Hooper, S.L. (in progress). What slow
-$I_{KCa}$ reveals about $[Ca]_{i}$ removal dynamics in the lobsyer
+$I_{KCa}$ reveals about $[Ca]_{i}$ removal dynamics in the lobster
 pyloric network.
 
 # Supplemental Information

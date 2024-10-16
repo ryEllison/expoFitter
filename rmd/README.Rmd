@@ -203,7 +203,7 @@ All visualizations are saved as a `.pdf` file.
 
 __Ellison, R.__, Thuma, J.B., Hooper, S.L. (in progress). $I_{KCa}$ trajectory reveals extremely slow (seconds-long) $[Ca]_{i}$ removal dynamics in a lobster pyloric neuron.
 
-Thuma, J.B., __Ellison, R.__, Hooper, S.L. (in progress). What slow $I_{KCa}$ reveals about $[Ca]_{i}$ removal dynamics in the lobsyer pyloric network. 
+Thuma, J.B., __Ellison, R.__, Hooper, S.L. (in progress). What slow $I_{KCa}$ reveals about $[Ca]_{i}$ removal dynamics in the lobster pyloric network. 
 
 # Supplemental Information
 
