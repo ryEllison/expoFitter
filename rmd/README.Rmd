@@ -6,46 +6,46 @@ output:
 
 ```{r, hex, eval = TRUE, echo = FALSE, message = FALSE, fig.align = 'center', out.width = '25%', out.height = '25%'}
 
-##Sys block
-options(warn = -1)
-
-##Library block
-#Dependency check and/or installation
-dependencies <- c('showtext',
-		              'hexSticker',
-		              'knitr')
-
-for (i in dependencies){
-	if (i %in% rownames(installed.packages()) == TRUE){
-	  library(i, character.only = TRUE)
-
-	} else {
-	  install.packages(i, repos = 'http://cran.rstudio.com/')
-
-	  library(i, character.only = TRUE)
-	}
-}
-
-##Code block
-font_add_google('Righteous', 'text')
-showtext_auto()
-
-sticker('.\\static\\img.jpg',
-        package = 'expoFitter',
-        p_size = 100,
-        p_family = 'text',
-        p_color = 'red',
-        p_x = 1.10,
-        p_y = 1.05,
-        h_fill = 'white',
-        h_color = 'black',
-        h_size = 1,
-        s_x = 1,
-        s_y = 1,
-        s_width = 0.65,
-        s_height = 0.65,
-        filename = '.\\static\\hex.png',
-        dpi = 2000)
+# ##Sys block
+# options(warn = -1)
+# 
+# ##Library block
+# #Dependency check and/or installation
+# dependencies <- c('showtext',
+# 		              'hexSticker',
+# 		              'knitr')
+# 
+# for (i in dependencies){
+# 	if (i %in% rownames(installed.packages()) == TRUE){
+# 	  library(i, character.only = TRUE)
+# 
+# 	} else {
+# 	  install.packages(i, repos = 'http://cran.rstudio.com/')
+# 
+# 	  library(i, character.only = TRUE)
+# 	}
+# }
+# 
+# ##Code block
+# font_add_google('Righteous', 'text')
+# showtext_auto()
+# 
+# sticker('.\\static\\img.jpg',
+#         package = 'expoFitter',
+#         p_size = 100,
+#         p_family = 'text',
+#         p_color = 'red',
+#         p_x = 1.10,
+#         p_y = 1.05,
+#         h_fill = 'white',
+#         h_color = 'black',
+#         h_size = 1,
+#         s_x = 1,
+#         s_y = 1,
+#         s_width = 0.65,
+#         s_height = 0.65,
+#         filename = '.\\static\\hex.png',
+#         dpi = 2000)
 
 knitr::include_graphics('.\\static\\hex.png')
 
