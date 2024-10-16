@@ -47,7 +47,7 @@ output:
 #         filename = '.\\static\\hex.png',
 #         dpi = 2000)
 
-knitr::include_graphics('.\\static\\hex.png')
+knitr::include_graphics('.\\static\\hex.jpg')
 
 ```
 

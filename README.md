@@ -1,5 +1,5 @@
 
-<img src=".\static\hex.png" width="25%" height="25%" style="display: block; margin: auto;" />
+<img src=".\static\hex.jpg" width="25%" height="25%" style="display: block; margin: auto;" />
 
 # Overview
 
