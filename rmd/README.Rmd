@@ -47,7 +47,7 @@ output:
 #         filename = '.\\static\\hex.png',
 #         dpi = 2000)
 
-knitr::include_graphics('.\\static\\hex.png')
+knitr::include_graphics('.\\rmd\\static\\hex.png')
 
 ```
 
@@ -91,7 +91,7 @@ Ensure you are in the desired directory before executing the terminal commands. 
 
 ```{r, fig1, eval = TRUE, echo = FALSE, message = FALSE, fig.align = 'center', fig.cap = 'Figure 1. Navigate to Code in Github.'}
 
-knitr::include_graphics('.\\static\\code.png')
+knitr::include_graphics('.\\rmd\\static\\code.png')
 
 ```
 
@@ -99,7 +99,7 @@ knitr::include_graphics('.\\static\\code.png')
 
 ```{r, fig2, eval = TRUE, echo = FALSE, message = FALSE, fig.align = 'center', fig.cap = 'Figure 2. Select Download ZIP.'}
 
-knitr::include_graphics('.\\static\\downloadZIP.png')
+knitr::include_graphics('.\\rmd\\static\\downloadZIP.png')
 
 ```
 
@@ -135,7 +135,7 @@ You can also use a point-and-click approach and directly download the installer 
 
 ```{r, fig3, eval = TRUE, echo = FALSE, message = FALSE, fig.align = 'center', fig.cap = 'Figure 3. Location of ellipsis option in upper right corner.'}
 
-knitr::include_graphics('.\\static\\ellipsis.png')
+knitr::include_graphics('.\\rmd\\static\\ellipsis.png')
 
 ```
 
@@ -143,7 +143,7 @@ knitr::include_graphics('.\\static\\ellipsis.png')
 
 ```{r, fig4, eval = TRUE, echo = FALSE, message = FALSE, fig.align = 'center', fig.cap = 'Figure 4. Select download from ellipsis dropdown.'}
 
-knitr::include_graphics('.\\static\\download.png')
+knitr::include_graphics('.\\rmd\\static\\download.png')
 
 ```
 
@@ -159,7 +159,7 @@ Lastly, **expoFitter** has been made publicly available as a web app, which is h
 
 ```{r, fig5, eval = TRUE, echo = FALSE, message = FALSE, fig.align = 'center', fig.cap = 'In this example dataset, t is time in seconds (s) and i is current data in nanoamps (nA).'}
 
-knitr::include_graphics('.\\static\\dataset.png')
+knitr::include_graphics('.\\rmd\\static\\dataset.png')
 
 ```
   

@@ -1,5 +1,5 @@
 
-<img src=".\static\hex.png" width="25%" height="25%" style="display: block; margin: auto;" />
+<img src=".\rmd\static\hex.png" width="25%" height="25%" style="display: block; margin: auto;" />
 
 # Overview
 
@@ -82,7 +82,7 @@ machine before decompressing the file.
 
 <div class="figure" style="text-align: center">
 
-<img src=".\static\code.png" alt="Figure 1. Navigate to Code in Github."  />
+<img src=".\rmd\static\code.png" alt="Figure 1. Navigate to Code in Github."  />
 <p class="caption">
 Figure 1. Navigate to Code in Github.
 </p>
@@ -93,7 +93,7 @@ Figure 1. Navigate to Code in Github.
 
 <div class="figure" style="text-align: center">
 
-<img src=".\static\downloadZIP.png" alt="Figure 2. Select Download ZIP."  />
+<img src=".\rmd\static\downloadZIP.png" alt="Figure 2. Select Download ZIP."  />
 <p class="caption">
 Figure 2. Select Download ZIP.
 </p>
@@ -152,7 +152,7 @@ executing the `pseudo-installer` pseudo-executable.
 
 <div class="figure" style="text-align: center">
 
-<img src=".\static\ellipsis.png" alt="Figure 3. Location of ellipsis option in upper right corner."  />
+<img src=".\rmd\static\ellipsis.png" alt="Figure 3. Location of ellipsis option in upper right corner."  />
 <p class="caption">
 Figure 3. Location of ellipsis option in upper right corner.
 </p>
@@ -163,7 +163,7 @@ Figure 3. Location of ellipsis option in upper right corner.
 
 <div class="figure" style="text-align: center">
 
-<img src=".\static\download.png" alt="Figure 4. Select download from ellipsis dropdown."  />
+<img src=".\rmd\static\download.png" alt="Figure 4. Select download from ellipsis dropdown."  />
 <p class="caption">
 Figure 4. Select download from ellipsis dropdown.
 </p>
@@ -186,7 +186,7 @@ accessed using <https://ryellison.shinyapps.io/expofitter/>.
 
 <div class="figure" style="text-align: center">
 
-<img src=".\static\dataset.png" alt="In this example dataset, t is time in seconds (s) and i is current data in nanoamps (nA)."  />
+<img src=".\rmd\static\dataset.png" alt="In this example dataset, t is time in seconds (s) and i is current data in nanoamps (nA)."  />
 <p class="caption">
 In this example dataset, t is time in seconds (s) and i is current data
 in nanoamps (nA).

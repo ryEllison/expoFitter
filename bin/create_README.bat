@@ -9,16 +9,19 @@ TITLE Construct README
 :: Echo to terminal
 echo [31m~! Building README from .rmd source !~[0m
 
+:: Move rmd source to top of heap
+echo:
+move ../rmd/README.rmd ../
+
 :: Call R interpreter and render .rmd file
-Rscript -e "rmarkdown::render('../rmd/README.rmd', quiet = TRUE)"
+Rscript -e "rmarkdown::render('../README.rmd', quiet = TRUE)"
 
 :: System pause before moving docs
 timeout 5 /nobreak
 
-:: Move docs to top of repo heap
+:: Move rmd source to appropriate directory
 echo:
-move ../rmd/README.html ../
-move ../rmd/README.md ../
+move ../README.rmd ../rmd
 
 :: System pause before closure of terminal
 echo:
