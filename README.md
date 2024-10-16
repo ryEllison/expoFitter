@@ -186,10 +186,9 @@ accessed using <https://ryellison.shinyapps.io/expofitter/>.
 
 <div class="figure" style="text-align: center">
 
-<img src=".\rmd\static\dataset.png" alt="In this example dataset, t is time in seconds (s) and i is current data in nanoamps (nA)."  />
+<img src=".\rmd\static\dataset.png" alt="t is time in seconds (s) and i is current data in nanoamps (nA)."  />
 <p class="caption">
-In this example dataset, t is time in seconds (s) and i is current data
-in nanoamps (nA).
+t is time in seconds (s) and i is current data in nanoamps (nA).
 </p>
 
 </div>
@@ -247,6 +246,16 @@ in nanoamps (nA).
   the interface.
 
 All visualizations are saved as a `.pdf` file.
+
+# Related Works
+
+**Ellison, R.**, Thuma, J.B., Hooper, S.L. (in progress). $I_{KCa}$
+trajectory reveals extremely slow (seconds-long) $[Ca]_{i}$ removal
+dynamics in a lobster pyloric neuron.
+
+Thuma, J.B., **Ellison, R.**, Hooper, S.L. (in progress). What slow
+$I_{KCa}$ reveals about $[Ca]_{i}$ removal dynamics in the lobsyer
+pyloric network.
 
 # Supplemental Information
 

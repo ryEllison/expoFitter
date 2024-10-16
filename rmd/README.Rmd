@@ -157,7 +157,7 @@ Lastly, **expoFitter** has been made publicly available as a web app, which is h
 
 - Upload a `.csv` file using `Browse...` under `Select File` containing electrophysiological (e.g., neuronal current) time-series data. Ensure the dataset has _at least_ two columns, e.g., 
 
-```{r, fig5, eval = TRUE, echo = FALSE, message = FALSE, fig.align = 'center', fig.cap = 'In this example dataset, t is time in seconds (s) and i is current data in nanoamps (nA).'}
+```{r, fig5, eval = TRUE, echo = FALSE, message = FALSE, fig.align = 'center', fig.cap = 't is time in seconds (s) and i is current data in nanoamps (nA).'}
 
 knitr::include_graphics('.\\rmd\\static\\dataset.png')
 
@@ -198,6 +198,12 @@ after the second column is trivial.
 - Once a model is fit to the data, the figure observed in the `Visualization` section can be saved by clicking the `Save` button in the interface.
 
 All visualizations are saved as a `.pdf` file.
+
+# Related Works
+
+__Ellison, R.__, Thuma, J.B., Hooper, S.L. (in progress). $I_{KCa}$ trajectory reveals extremely slow (seconds-long) $[Ca]_{i}$ removal dynamics in a lobster pyloric neuron.
+
+Thuma, J.B., __Ellison, R.__, Hooper, S.L. (in progress). What slow $I_{KCa}$ reveals about $[Ca]_{i}$ removal dynamics in the lobsyer pyloric network. 
 
 # Supplemental Information
 
