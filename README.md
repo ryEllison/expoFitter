@@ -1,44 +1,5 @@
 
-<p align="center">
-<img src=".\\static\\hex.png" alt="" style="width:25%;">
-</p>
-<!-- ```{r, hex, eval = TRUE, echo = FALSE, message = FALSE, fig.align = 'center', out.width = '22.5%', out.height = '22.5%'} -->
-<!-- ##Sys block -->
-<!-- options(warn = -1) -->
-<!-- ##Library block -->
-<!-- #Dependency check and/or installation -->
-<!-- dependencies <- c('showtext', -->
-<!--                      'hexSticker', -->
-<!--                      'knitr') -->
-<!-- for (i in dependencies){ -->
-<!--    if (i %in% rownames(installed.packages()) == TRUE){ -->
-<!--      library(i, character.only = TRUE) -->
-<!--    } else { -->
-<!--      install.packages(i, repos = 'http://cran.rstudio.com/') -->
-<!--      library(i, character.only = TRUE) -->
-<!--    } -->
-<!-- } -->
-<!-- ##Code block -->
-<!-- font_add_google('Righteous', 'text') -->
-<!-- showtext_auto() -->
-<!-- sticker('.\\static\\img.jpg', -->
-<!--         package = 'expoFitter', -->
-<!--         p_size = 125, -->
-<!--         p_family = 'text', -->
-<!--         p_color = 'black', -->
-<!--         p_x = 1, -->
-<!--         p_y = 1, -->
-<!--         h_fill = 'black', -->
-<!--         h_color = 'black', -->
-<!--         h_size = 1, -->
-<!--         s_x = 1, -->
-<!--         s_y = 1, -->
-<!--         s_width = 1, -->
-<!--         s_height = 1, -->
-<!--         filename = '.\\static\\hex.png', -->
-<!--         dpi = 2000) -->
-<!-- include_graphics('.\\static\\hex.png') -->
-<!-- ``` -->
+<img src=".\static\hex.png" width="25%" height="25%" style="display: block; margin: auto;" />
 
 # Overview
 
@@ -119,13 +80,7 @@ commands. You can also use a point-and-click approach by navigating to
 your local downloads to the desired location on your machine before
 decompressing the file.
 
-<!-- ```{r, hex, eval = TRUE, echo = FALSE, message = FALSE, fig.align = 'center', out.width = '25%', out.height = '25%'} -->
-<!-- ##Sys block -->
-<!-- options(warn = -1) -->
-<!-- ##Library block -->
-<!-- library(knitr) -->
-<!-- include_graphics('.\\static\\hex.png') -->
-<!-- ``` -->
+<img src=".\static\hex.png" width="25%" height="25%" style="display: block; margin: auto;" />
 
 To run **expoFitter** locally, ensure that `R` is installed on your
 system, as well as the following packages:
@@ -175,13 +130,7 @@ your moving the installer from your local downloads to the desired
 location on your machine before decompressing the file and executing the
 `pseudo-installer` pseudo-executable.
 
-<!-- ```{r, hex, eval = TRUE, echo = FALSE, message = FALSE, fig.align = 'center', out.width = '25%', out.height = '25%'} -->
-<!-- ##Sys block -->
-<!-- options(warn = -1) -->
-<!-- ##Library block -->
-<!-- library(knitr) -->
-<!-- include_graphics('.\\static\\hex.png') -->
-<!-- ``` -->
+<img src=".\static\hex.png" width="25%" height="25%" style="display: block; margin: auto;" />
 
 ### **expoFitter** on shinyapps.io
 
@@ -197,13 +146,7 @@ accessed using <https://ryellison.shinyapps.io/expofitter/>.
   electrophysiological (e.g., neuronal current) time-series data. Ensure
   the dataset has *at least* two columns, e.g.,
 
-<!-- ```{r, hex, eval = TRUE, echo = FALSE, message = FALSE, fig.align = 'center', out.width = '25%', out.height = '25%'} -->
-<!-- ##Sys block -->
-<!-- options(warn = -1) -->
-<!-- ##Library block -->
-<!-- library(knitr) -->
-<!-- include_graphics('.\\static\\hex.png') -->
-<!-- ``` -->
+<img src=".\static\hex.png" width="25%" height="25%" style="display: block; margin: auto;" />
 
 where, in this example, $t$ is time in seconds (s) and $i$ is current
 data in nanoamps (nA).

@@ -4,56 +4,52 @@ output:
     keep_html: TRUE
 ---
 
-<p align="center">
-  <img src=".\\static\\hex.png" alt="" style="width:25%;">
-</p>
+```{r, hex, eval = TRUE, echo = FALSE, message = FALSE, fig.align = 'center', out.width = '25%', out.height = '25%'}
 
-<!-- ```{r, hex, eval = TRUE, echo = FALSE, message = FALSE, fig.align = 'center', out.width = '22.5%', out.height = '22.5%'} -->
+# ##Sys block
+# options(warn = -1)
+# 
+# ##Library block
+# #Dependency check and/or installation
+# dependencies <- c('showtext',
+# 		              'hexSticker',
+# 		              'knitr')
+# 
+# for (i in dependencies){
+# 	if (i %in% rownames(installed.packages()) == TRUE){
+# 	  library(i, character.only = TRUE)
+# 
+# 	} else {
+# 	  install.packages(i, repos = 'http://cran.rstudio.com/')
+# 
+# 	  library(i, character.only = TRUE)
+# 	}
+# }
+# 
+# ##Code block
+# font_add_google('Righteous', 'text')
+# showtext_auto()
+# 
+# sticker('.\\static\\img.jpg',
+#         package = 'expoFitter',
+#         p_size = 125,
+#         p_family = 'text',
+#         p_color = 'black',
+#         p_x = 1,
+#         p_y = 1,
+#         h_fill = 'black',
+#         h_color = 'black',
+#         h_size = 1,
+#         s_x = 1,
+#         s_y = 1,
+#         s_width = 1,
+#         s_height = 1,
+#         filename = '.\\static\\hex.png',
+#         dpi = 2000)
 
-<!-- ##Sys block -->
-<!-- options(warn = -1) -->
+knitr::include_graphics('.\\static\\hex.png')
 
-<!-- ##Library block -->
-<!-- #Dependency check and/or installation -->
-<!-- dependencies <- c('showtext', -->
-<!-- 		              'hexSticker', -->
-<!-- 		              'knitr') -->
-
-<!-- for (i in dependencies){ -->
-<!-- 	if (i %in% rownames(installed.packages()) == TRUE){ -->
-<!-- 	  library(i, character.only = TRUE) -->
-
-<!-- 	} else { -->
-<!-- 	  install.packages(i, repos = 'http://cran.rstudio.com/') -->
-
-<!-- 	  library(i, character.only = TRUE) -->
-<!-- 	} -->
-<!-- } -->
-
-<!-- ##Code block -->
-<!-- font_add_google('Righteous', 'text') -->
-<!-- showtext_auto() -->
-
-<!-- sticker('.\\static\\img.jpg', -->
-<!--         package = 'expoFitter', -->
-<!--         p_size = 125, -->
-<!--         p_family = 'text', -->
-<!--         p_color = 'black', -->
-<!--         p_x = 1, -->
-<!--         p_y = 1, -->
-<!--         h_fill = 'black', -->
-<!--         h_color = 'black', -->
-<!--         h_size = 1, -->
-<!--         s_x = 1, -->
-<!--         s_y = 1, -->
-<!--         s_width = 1, -->
-<!--         s_height = 1, -->
-<!--         filename = '.\\static\\hex.png', -->
-<!--         dpi = 2000) -->
-
-<!-- include_graphics('.\\static\\hex.png') -->
-
-<!-- ``` -->
+```
 
 # Overview
 
@@ -93,17 +89,11 @@ There are several ways to access **expoFitter**. If you want the entirety of the
   ```
 Ensure you are in the desired directory before executing the terminal commands. You can also use a point-and-click approach by navigating to _Code_ in Github and selecting _Download ZIP_. Downloading **expoFitter** this way will require your moving **expoFitter** from your local downloads to the desired location on your machine before decompressing the file. 
 
-<!-- ```{r, hex, eval = TRUE, echo = FALSE, message = FALSE, fig.align = 'center', out.width = '25%', out.height = '25%'} -->
+```{r, fig1, eval = TRUE, echo = FALSE, message = FALSE, fig.align = 'center', out.width = '25%', out.height = '25%'}
 
-<!-- ##Sys block -->
-<!-- options(warn = -1) -->
+knitr::include_graphics('.\\static\\hex.png')
 
-<!-- ##Library block -->
-<!-- library(knitr) -->
-
-<!-- include_graphics('.\\static\\hex.png') -->
-
-<!-- ``` -->
+```
 
 To run **expoFitter** locally, ensure that `R` is installed on your system, as well as the following packages:
 
@@ -133,17 +123,11 @@ Again, ensuring you are in the directory where you wish the installer to be plac
 
 You can also use a point-and-click approach and directly download the installer by navigating to the `installer.zip`, the ellipsis option in the upper right corner, and selecting download (or, using the respective keyboard shortcuts once `installer.zip` has been accessed, e.g., `CTRL + SHIFT + S`). Downloading **expoFitter** this way will require your moving the installer from your local downloads to the desired location on your machine before decompressing the file and executing the `pseudo-installer` pseudo-executable.
 
-<!-- ```{r, hex, eval = TRUE, echo = FALSE, message = FALSE, fig.align = 'center', out.width = '25%', out.height = '25%'} -->
+```{r, fig2, eval = TRUE, echo = FALSE, message = FALSE, fig.align = 'center', out.width = '25%', out.height = '25%'}
 
-<!-- ##Sys block -->
-<!-- options(warn = -1) -->
+knitr::include_graphics('.\\static\\hex.png')
 
-<!-- ##Library block -->
-<!-- library(knitr) -->
-
-<!-- include_graphics('.\\static\\hex.png') -->
-
-<!-- ``` -->
+```
 
 ### **expoFitter** on shinyapps.io
 
@@ -156,17 +140,11 @@ Lastly, **expoFitter** has been made publicly available as a web app, which is h
 - Upload a `.csv` file using `Browse...` under `Select File` containing electrophysiological (e.g., neuronal current) time-series data. Ensure the dataset has _at least_ two columns, e.g., 
 
 
-<!-- ```{r, hex, eval = TRUE, echo = FALSE, message = FALSE, fig.align = 'center', out.width = '25%', out.height = '25%'} -->
+```{r, fig3, eval = TRUE, echo = FALSE, message = FALSE, fig.align = 'center', out.width = '25%', out.height = '25%'}
 
-<!-- ##Sys block -->
-<!-- options(warn = -1) -->
+knitr::include_graphics('.\\static\\hex.png')
 
-<!-- ##Library block -->
-<!-- library(knitr) -->
-
-<!-- include_graphics('.\\static\\hex.png') -->
-
-<!-- ``` -->
+```
 
 
 where, in this example, $t$ is time in seconds (s) and $i$ is current data in
